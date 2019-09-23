@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Toggle from './Toggle';
+import { useTitleInput } from './hooks/useTitleInput';
 import './App.css';
 
 const App = () => {
   // formula
   // const [value, setValue] = useState(initialState);
 
-	const [name, setName] = useState('');
-
-	// runs after a mount/render and after an update
-	useEffect(() => {
-		document.title = name;
-	});
+	const [name, setName] = useTitleInput('');
 
 	return (
 		<div className="App">
@@ -30,6 +26,7 @@ const App = () => {
 		</div>
 	);
 };
+
 
 // const formSubmit = (value, setValue) => {
 // 	console.log('email sent' + value);
