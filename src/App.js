@@ -9,10 +9,10 @@ const App = () => {
 
 	const [name, setName] = useTitleInput('');
 	const ref = useRef();
-	console.log('ref:', ref);
+	console.log('ref:', ref.current);
 
 	return (
-		<div className="App" ref={ref}>
+		<div className="main-wrapper"  ref={ref}>
 			<h1>We are the app</h1>
 			<input type="text" onChange={(e) => setName(e.target.value)} value={name} />
 			<Toggle />
